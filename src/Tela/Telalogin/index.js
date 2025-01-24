@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import { Button } from 'react-native';
 
 const Acessarconta = ({ navigation }) => {
     const [save, setSave] = useState(false);
@@ -19,15 +20,16 @@ const Acessarconta = ({ navigation }) => {
                  <Text style={styles.text1}>Esqueceu a senha?</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.botao}>
+                <TouchableOpacity style={styles.botao} onPress={()=> navigation.navigate('Criarconta')}>
                 <Text style={styles.botaoTexto}>Conecte-se</Text>
             </TouchableOpacity>
-            <View style={styles.linhass}>
+            <View style={styles.linhass}> 
             <View style={styles.line}></View>
             <Text style={{ color: "#992800" }} > Ou </Text>
             <View style={styles.line}></View>
 
             </View>
+
             
             <TouchableOpacity style={styles.aut}>
                 <AntDesign name="googleplus" size={40} color="#992800"/>
