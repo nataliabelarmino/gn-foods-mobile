@@ -1,68 +1,78 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
 
-const Acessarconta = ({ navigation }) => {
+const Acessarconta = () => {
     const [lojas] = useState([
-        {
-            nome: "Dimas Pizza",
-            avaliacao: 4,
-            dadoQualquer: "dado qualquer",
-        },
-        {
-            nome: "VL Açaiteria",
-            avaliacao: 2,
-            dadoQualquer: "dado qualquer 2",
-        }
+        { nome: "Panificadora Imperial", avaliacao: '4.0', dadoQualquer: "Padaria - 0,5 km, 15-30 min" },
+        { nome: "Supermercado Casa Alves", avaliacao: '4.0', dadoQualquer: "Supermercado - 0,8km - 35-45min" },
+        { nome: "VL Açaiteria", avaliacao: '2.0', dadoQualquer: "Sorvete - 1,0km - 15-20min" },
+        { nome: "Dimas Pizza", avaliacao: '5.0', dadoQualquer: "Pizzas - 1,0km - 35-50min" },
+        { nome: "Pizzaria Imperial", avaliacao: '3.0', dadoQualquer: "dado qualquer 2" },
     ]);
+
+    const [searchText, setSearchText] = useState('');
+
+    // Filtro das lojas
+    const filteredLojas = lojas.filter((loja) =>
+        loja.nome.toLowerCase().includes(searchText.toLowerCase())
+    );
 
     return (
         <View style={styles.container}>
-            
-            {/* Exibindo as lojas */}
-            <View>
-                {lojas.map((loja, index) => (
-                    <View key={index}>
-                        <Text>{loja.nome}</Text>
-                        <Text>{loja.avaliacao}</Text>
-                        <Text>{loja.dadoQualquer}</Text>
-                    </View>
-                ))}
-            </View>
+            {/* Barra de pesquisa */}
+            <TextInput
+                style={styles.searchBox}
+                placeholder="Buscar loja..."
+                placeholderTextColor="#888"
+                value={searchText}
+                onChangeText={(text) => setSearchText(text)}
+            />
 
-          
+            {/* Lista de lojas */}
+            {filteredLojas.map((loja, index) => (
+                <View style={styles.loja} key={index}>
+                    <Text style={styles.nomeEstab}>{loja.nome}</Text>
+                    <Text style={styles.dadoQualquer}>{loja.dadoQualquer}</Text>
+                    <Text style={styles.avaliacao}>Avaliação: {loja.avaliacao}</Text>
+                </View>
+            ))}
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-        paddingTop: 50,
         flex: 1,
+        padding: 16,
+        backgroundColor: '#fff',
     },
-    
-    aut: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#f0f0f0',
-        borderRadius: 10,
+    searchBox: {
+        height: 40,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        marginTop: 100,
+        borderRadius: 8,
+        paddingHorizontal: 10,
+        marginBottom: 20,
+    },
+    loja: {
+        marginBottom: 15,
         padding: 10,
-        width: '80%',
-        marginVertical: 20,
+        backgroundColor: '#f9f9f9',
+        borderRadius: 8,
+        elevation: 2, // Sombras no Android
     },
-    autTexto: {
-        marginLeft: 10,
-        fontSize: 14,
-        color: "#992800",
+    nomeEstab: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 5,
     },
-    autTexto1: {
-        marginLeft: 10,
-        fontSize: 14,
-        color: "#992800",
+    dadoQualquer: {
+        color: '#555',
+        marginBottom: 5,
+    },
+    avaliacao: {
+        color: '#888',
     },
 });
 
