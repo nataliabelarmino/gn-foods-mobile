@@ -21,7 +21,7 @@ const Acessarconta = ({ navigation }) => {
                  <Text style={styles.text1}>Esqueceu a senha?</Text>
             </TouchableOpacity>
             
-                <TouchableOpacity style={styles.botao} onPress={()=> navigation.navigate('Criarconta')}>
+            <TouchableOpacity style={styles.botao} onPress={()=> navigation.navigate('Telaprinc')}>
                 <Text style={styles.botaoTexto}>Conecte-se</Text>
             </TouchableOpacity>
             <View style={styles.linhass}> 
@@ -36,8 +36,10 @@ const Acessarconta = ({ navigation }) => {
                 <AntDesign name="googleplus" size={40} color="#992800"/>
                 <Text style={styles.autTexto}>Entre com o Google</Text>
             </TouchableOpacity>
+
+                
+            <TouchableOpacity onPress={()=> navigation.navigate('Criarconta')}>
                 <Text style={styles.autTexto1}>Não tem conta?</Text>
-            <TouchableOpacity>
                 <Text style={[styles.autTexto1, { fontWeight: 'bold' }]}>Cadastre-se</Text>
             </TouchableOpacity>
             <View style={styles.lineBottom}></View>
