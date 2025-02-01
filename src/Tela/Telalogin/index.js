@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Button } from 'react-native';
+import Cabecalho from '../../componentes/Cabecalho'
 
 const Acessarconta = ({ navigation }) => {
     const [save, setSave] = useState(false);
 
     return (
         <View style={styles.container}>
+            <Cabecalho />
+
             <View>
                 <Text style={styles.text}>  Nome ou CPF; </Text>
                 <TextInput style={styles.inputs}/>

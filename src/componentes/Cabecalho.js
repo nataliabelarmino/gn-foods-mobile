@@ -20,14 +20,14 @@ const styles = StyleSheet.create({
     flex: 1, // Garante que o container ocupe toda a tela
     backgroundColor: '#fff',
     justifyContent: 'space-between', // Garante o espaçamento entre os elementos (cabeçalho e barra inferior)
+    width: '100%'
   },
   header: {
     width: '100%',
-    marginBottom: 20, // Ajuste o espaçamento abaixo do cabeçalho
   },
   lineTop: {
     width: '100%',
-    height: 100, // Linha grossa, altura ajustada
+    height: 70, // Linha grossa, altura ajustada
     backgroundColor: '#FEAD10', // Cor da linha superior
     alignItems: 'center', // Centraliza a imagem horizontalmente
     flexDirection: 'row', // Alinha os itens na horizontal
@@ -37,8 +37,7 @@ const styles = StyleSheet.create({
   logo: {
     width: 100,
     height: 50,
-    resizeMode: 'contain',
-    marginTop: 50,
+    resizeMode: 'contain',    
   },
   
 });
