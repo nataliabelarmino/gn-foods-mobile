@@ -29,7 +29,7 @@ const Acessarconta = () => {
             {/* Lista de lojas */}
             {filteredLojas.map((loja, index) => (
                 <TouchableOpacity
-                    onPress={ () => navigation.navigate('Loja') }
+                    onPress={ () => navigation.navigate('Loja', loja) }
                 >
                     <View style={styles.loja} key={index}>
                         <Text style={styles.nomeEstab}>{loja.nome}</Text>
@@ -39,8 +39,7 @@ const Acessarconta = () => {
                 </TouchableOpacity>
             ))}
         </ScrollView>
-    );
-};
+    );};
 
 const styles = StyleSheet.create({
     container: {

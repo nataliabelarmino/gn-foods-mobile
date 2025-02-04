@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import Logo from '../img/logogn.jpg'; // Verifique o caminho da sua imagem!
+import Logo from '../img/logogn.png'; // Verifique o caminho da sua imagem!
 
 export default function HomeScreen() {
   return (
