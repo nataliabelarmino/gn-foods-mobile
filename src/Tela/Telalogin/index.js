@@ -37,7 +37,7 @@ const Acessarconta = ({ navigation }) => {
             
             <TouchableOpacity style={styles.aut}>
                 <AntDesign name="googleplus" size={40} color="#992800"/>
-                <Text style={styles.autTexto}>Entre com o Google</Text>
+                <Text style={styles.autTexto}>Entre com o Google.</Text>
             </TouchableOpacity>
 
                 
