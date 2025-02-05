@@ -4,12 +4,16 @@ import React, { useState } from 'react';
 
 const Acessarloja = ({ route }) => {
    const [save, setSave] = useState(false);
-   const loja = route.params;
+   const loja = route.params || {} ;
     
     function Produto({produto}) {
         return (
-            <View>
-                <Text>{produto.nome}</Text>
+            <View style={styles.caixa}>
+                <Text style={styles.nomeProd}>{produto.nome}</Text>
+                <View style={styles.desc}>
+                <Text>{produto.descricao}</Text>
+                <Text>{produto.preco}</Text>
+                </View>
             </View>
         );
     }
@@ -45,6 +49,15 @@ const styles = StyleSheet.create({
         fontSize: 24,
         textAlign: 'center',
         marginTop: 60,
+    },
+    caixa:{
+        flexDirection: 'row', // Alinha os produtos na horizontal
+        flexWrap: 'wrap',
+        justifyContent: 'space-between', // Distribui os itens uniformemente
+        padding: 10,
+    },
+    desc:{
+        flexWrap: 'wrap', // Permite que os itens quebrem de linha
     }
 })
 
