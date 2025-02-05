@@ -24,6 +24,7 @@ export default [
 
     { 
         nome: "Vl Açaíteria",
+        imagem: require ('../img/vl.png'),
         avaliacao: '5.0',
         dadoQualquer: "Sorvetes e açaís - 0,8km - 35-45min",
         categorias: [
@@ -32,7 +33,7 @@ export default [
                 produtos: [        
                     {
                         nome: "Açaí 250ml",
-                        descricao: "Açaí tradicional, granola, leite condensado, amendoim, banana, paçoca",
+                        descricao: "Açaí tradicional, granola,  leite condensado, amendoim, banana, paçoca",
                         preco: 12.00
                     },
                     {
@@ -43,18 +44,32 @@ export default [
                 ]
             },
             { 
-                nome: "Hamburguês",
+                nome: "Hamburguês", 
                 produtos: [
-                    {
+                    {                   
+                        
                         nome: "X-Tudo",
-                        descricao: "Salada, carne, ovo, maionese, ketchup, queijo mussarela, queijo cheddar",
-                        preco: 24.00
+                        descricao: "Salada, carne, ovo, maionese, ketchup queijo mussarela, queijo cheddar",
+                        preco: 24.00,
                     },
                     {
                         nome: "X-Frango",
                         descricao: "Salada, Frango, Ovo, Maionese, Ketchup, Queijo mussarela, Queijo cheddar",
-                        preco: 20.00
-                    }
+                        preco: 20.00,
+                    },
+
+                    {
+                        nome: "X-Salada",
+                        descricao: "Alface, tomate, cebola, Picles, Frango, Ovo, Maionese, Ketchup, Queijo mussarela, Queijo cheddar",
+                        preco: 20.00,
+                    },
+
+                    {
+                        nome: "X-Bacon",
+                        descricao: "Salada, Carne, Ovo, Bacon, Maionese, Ketchup, Queijo mussarela, Queijo cheddar",
+                        preco: 20.00,
+                    },
+                    
                 ]
             }
         ]
