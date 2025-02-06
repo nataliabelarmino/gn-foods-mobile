@@ -15,6 +15,7 @@ const Acessarloja = ({ route, navigation }) => {
         return (
             <>
                 <View style={styles.divisor} />
+                
                 <View style={styles.produtoContainer}>
                     <Image source={produto.imagem} style={styles.produtoImagem} />
 
@@ -96,7 +97,7 @@ const styles = StyleSheet.create({
     },
     
     titulo:{
-        marginTop: 80,
+        marginTop: 40,
         fontSize: 25, 
         fontWeight: 'bold', 
         textAlign: 'right', 
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
     preco: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#008000',
+        color: 'black',
         marginRight: 10,
     },
 
@@ -159,7 +160,9 @@ const styles = StyleSheet.create({
     categoriaTitulo: {
         fontSize: 18,
         fontWeight: 'bold',
+        marginLeft: 10,
         marginVertical: 10,
+        color: "#992800",
     },
 
     carrinhoContainer: {

@@ -5,18 +5,40 @@ export default [
         dadoQualquer: "Padaria - 0,5 km, 15-30 min",  
         categorias: [
             {
-                nome: "Açaí",
+                nome: "Massas",
                 produtos: [
                     {
-                        nome: "Açaí 250ml",
-                        descricao: "Açaí tradicional, granola, leite condensado, amendoim, banana, paçoca",
-                        preco: 12.00
+                        nome: "Bolo Formigueiro",
+                        descricao: "Bolo de trigo com granulado",
+                        preco: 12.00,
                     },
                     {
-                        nome: "Açaí 500ml",
-                        descricao: "Açaí tradicional, granola, leite condensado, amendoim, banana, paçoca",
-                        preco: 20.00
-                    }
+                        nome: "Bolo de chocolate",
+                        descricao: "Bolo com massa de chocolate e cobertura de brigadeiro",
+                        preco: 18.00,
+                    },
+                    {
+                        nome: "Empada de frango",
+                        descricao: "Empada com recheio de frango com catupiry",
+                        preco: 10.00,
+                    },
+                ]
+            },
+            { 
+                nome: "Pães", 
+                produtos: [
+                    {                   
+                        nome: "Pão com doce de goiaba",
+                        preco: 1.00,
+                    },
+                    {
+                        nome: "Pão Francês",
+                        preco: 0.50,
+                    },
+                    {
+                        nome: "Pão com doce de coco",
+                        preco: 1.00,
+                    },
                 ]
             }
         ]
@@ -33,7 +55,7 @@ export default [
                 produtos: [        
                     {
                         nome: "Açaí 250ml",
-                        descricao: "Açaí tradicional, granola,  leite condensado, amendoim, banana, paçoca",
+                        descricao: "Açaí tradicional, granola, leite condensado, amendoim, banana, paçoca",
                         preco: 12.00
                     },
                     {
@@ -44,10 +66,9 @@ export default [
                 ]
             },
             { 
-                nome: "Hamburguês", 
+                nome: "Hamburguês Artesanais", 
                 produtos: [
                     {                   
-                        
                         nome: "X-Tudo",
                         descricao: "Salada, carne, ovo, maionese, ketchup queijo mussarela, queijo cheddar",
                         preco: 24.00,
@@ -75,15 +96,37 @@ export default [
         ]
     },
 
-    { 
+    {
         nome: "Dimas Pizza", 
-        avaliacao: '5.0', 
-        dadoQualquer: "Pizzas - 1,0km - 35-50min" 
+        avaliacao: "5.0", 
+        dadoQualquer: "Pizzas - 1,0 km, 35-50 min",  
+        categorias: [
+            {
+                nome: "Massas",
+                produtos: [
+                    {
+                        nome: "Bolo Formigueiro",
+                        descricao: "Bolo de trigo com granulado",
+                        preco: 12.00,
+                    },
+                    {
+                        nome: "Bolo de chocolate",
+                        descricao: "Bolo com massa de chocolate e cobertura de brigadeiro",
+                        preco: 18.00,
+                    },
+                    {
+                        nome: "Empada de frango",
+                        descricao: "Empada com recheio de frango com catupiry",
+                        preco: 10.00,
+                    },
+                ],
+            },
+        ]
     },
-    
+
     { 
         nome: "Pizzaria Imperial", 
         avaliacao: '3.0', 
         dadoQualquer: "dado qualquer 2" 
-    }
+    },
 ];
