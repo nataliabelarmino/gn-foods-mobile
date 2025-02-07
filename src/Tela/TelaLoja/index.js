@@ -60,12 +60,14 @@ const Acessarloja = ({ route, navigation }) => {
                     contentContainerStyle={{ flexGrow: 1, paddingBottom: 120 }}
                     keyboardShouldPersistTaps="handled"
                 >
-                    <Image source={loja.imagem} style={styles.produtoImg} />
-                    <Text style={styles.titulo}>{loja.nome}</Text>
+                    <View style={styles.lojaContainer}>
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <AntDesign name="left" size={24} color="black" style={styles.setaIcon} />
+                        </TouchableOpacity>
+                        <Image source={loja.imagem} style={styles.produtoImg} />
+                        <Text style={styles.titulo}>{loja.nome}</Text>
+                    </View>
                 
-
-                    
-
                     {loja.categorias.map((categoria, index) => (
                         <Categoria categoria={categoria} key={index} />
                     ))}
@@ -95,15 +97,26 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    
-    titulo:{
-        marginTop: 40,
-        fontSize: 25, 
-        fontWeight: 'bold', 
-        textAlign: 'right', 
-        textAlign: 'center',
 
+    lojaContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 130,
+        paddingHorizontal: 10,
     },
+
+    titulo: {
+        fontSize: 20, 
+        fontWeight: 'bold', 
+        textAlign: 'left', 
+        marginLeft: 10,
+        marginTop: 10,
+    },
+
+    setaIcon: {
+        marginRight: 10, // Para deixar a seta mais próxima da imagem
+    },
+
     divisor: {
         height: 1,
         backgroundColor: '#666666',
@@ -123,11 +136,11 @@ const styles = StyleSheet.create({
         height: 60,
         borderRadius: 8,
     },
+
     produtoImg: {
         width: 60,
         height: 60,
-        alignItems: 'center',
-        
+        borderRadius: 8,
     },
     
     produtoInfo: {
@@ -161,7 +174,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginLeft: 10,
-        marginVertical: 10,
+        marginVertical: 20,
         color: "#992800",
     },
 

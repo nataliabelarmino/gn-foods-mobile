@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import Logo from '../img/logogn.png'; // Verifique o caminho da sua imagem!
+import Logo from '../img/logogn.png'; 
 
 export default function HomeScreen() {
   return (
@@ -24,19 +24,20 @@ const styles = StyleSheet.create({
   },
   header: {
     width: '100%',
+    marginTop: 10,
   },
   lineTop: {
     width: '100%',
-    height: 70, // Linha grossa, altura ajustada
-    backgroundColor: '#FEAD10', // Cor da linha superior
-    alignItems: 'center', // Centraliza a imagem horizontalmente
-    flexDirection: 'row', // Alinha os itens na horizontal
-    justifyContent: 'flex-start', // Alinha a imagem à esquerda
+    height: 70, 
+    backgroundColor: '#FEAD10', 
+    alignItems: 'center', 
+    flexDirection: 'row', 
+    justifyContent: 'flex-start',
     
   },
   logo: {
-    width: 100,
-    height: 200,
+    width: 200,
+    height: 300,
     resizeMode: 'contain',    
   },
   
