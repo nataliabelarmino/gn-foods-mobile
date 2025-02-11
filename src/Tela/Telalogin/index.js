@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Entypo, FontAwesome } from '@expo/vector-icons';
 import { Button } from 'react-native';
 import Cabecalho from '../../componentes/Cabecalho';
 import logo from '../../img/logogn.png'; // Ajuste o caminho conforme necessário
@@ -10,44 +10,49 @@ const Acessarconta = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.logoContainer}>
-                <Image source={logo} style={styles.logo} />
-            </View>
             <Cabecalho />
-            
-            <View>
-                <Text style={styles.text}>Nome ou CPF:</Text>
-                <TextInput style={styles.inputs}/>
-            </View>
-            <View>
-                <Text style={styles.text}>Email:</Text>
-                <TextInput style={styles.inputs}/>
-            </View>
-            
-            <TouchableOpacity style={{ width: '100%', paddingHorizontal: 50 }}>
-                 <Text style={styles.text1}>Esqueceu a senha?</Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity style={styles.botao} onPress={()=> navigation.navigate('Telaprinc')}>
-                <Text style={styles.botaoTexto}>Conecte-se</Text>
-            </TouchableOpacity>
-            
-            <View style={styles.linhass}> 
-                <View style={styles.line}></View>
-                <Text style={{ color: "#992800" }}>Ou</Text>
-                <View style={styles.line}></View>
-            </View>
-            
-            <TouchableOpacity style={styles.aut}>
-                <AntDesign name="googleplus" size={40} color="#992800"/>
-                <Text style={styles.autTexto}>Entre com o Google</Text>
-            </TouchableOpacity>
+            <View style={styles.content}>
+                <View style={{marginBottom: 15}}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                        <Entypo name="mail" size={30} color="#992800" />
+                        <Text style={styles.text}>Email:</Text>
+                    </View>
+                    <TextInput style={styles.inputs} />
+                </View>
+                <View>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                        <FontAwesome name="lock" size={32} color="#992800" />
+                        <Text style={styles.text}>Senha:</Text>
+                    </View>
+                    <TextInput style={styles.inputs} />
+                </View>
 
-            <TouchableOpacity onPress={()=> navigation.navigate('Criarconta')}>
-                <Text style={styles.autTexto1}>Não tem conta?</Text>
-                <Text style={[styles.autTexto1, { fontWeight: 'bold' }]}>Cadastre-se</Text>
-            </TouchableOpacity>
-            
+                <View style={{ width: 300, justifyContent: 'flex-start' }}>
+                    <TouchableOpacity onPress={() => 0}>
+                        <Text style={styles.text1}>Esqueceu a senha?</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Telaprinc')}>
+                    <Text style={styles.botaoTexto}>Conecte-se</Text>
+                </TouchableOpacity>
+
+                <View style={styles.linhass}>
+                    <View style={styles.line}></View>
+                    <Text style={{ color: "#992800" }}>Ou</Text>
+                    <View style={styles.line}></View>
+                </View>
+
+                <TouchableOpacity style={styles.aut}>
+                    <AntDesign name="googleplus" size={40} color="#992800" />
+                    <Text style={styles.autTexto}>Entre com o Google</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate('Criarconta')}>
+                    <Text style={styles.autTexto1}>Não tem conta?</Text>
+                    <Text style={[styles.autTexto1, { fontWeight: 'bold' }]}>Cadastre-se</Text>
+                </TouchableOpacity>
+            </View>
             <View style={styles.lineBottom}></View>
         </View>
     );
@@ -57,21 +62,15 @@ export default Acessarconta;
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        width: '100%',
-        paddingTop: 50,
         flex: 1,
+        backgroundColor: '#fff',
     },
-    logoContainer: {
-        position: 'absolute',
-        top: 20,
-        left: 20,
-    },
-    logo: {
-        width: 150, // 
-        height: 170,
-        resizeMode: 'contain',
+    content: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     text: {
         color: "#992800",
@@ -80,7 +79,6 @@ const styles = StyleSheet.create({
     text1: {
         color: "blue",
         alignSelf: "flex-start",
-        marginLeft: 10,
         fontSize: 11,
         marginBottom: 10,
     },
@@ -126,10 +124,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#f0f0f0',
         borderRadius: 10,
-        padding: 10,
-        width: '80%',
         marginVertical: 20,
     },
     autTexto: {

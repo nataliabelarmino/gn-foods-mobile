@@ -1,6 +1,7 @@
 export default [
     { 
         nome: "Panificadora Imperial", 
+        imagem: require ('../img/imperial_logo.png'),
         avaliacao: "4.0", 
         dadoQualquer: "Padaria - 0,5 km, 15-30 min",  
         categorias: [
@@ -8,18 +9,21 @@ export default [
                 nome: "Massas",
                 produtos: [
                     {
+                        id: 1,
                         nome: "Bolo Formigueiro",
                         imagem: require("../img/boloformigueiro.jpg"),
                         descricao: "Bolo de trigo com granulado.",
                         preco: 12.00,
                     },
                     {
+                        id: 2,
                         nome: "Bolo de chocolate",
                         imagem: require("../img/bolochoco.jpg"),
                         descricao: "Bolo com massa de chocolate e cobertura de brigadeiro.",
                         preco: 18.00,
                     },
                     {
+                        id: 3,
                         nome: "Empada de frango",
                         imagem: require("../img/empada.jpg"),
                         descricao: "Empada com recheio de frango com catupiry.",
@@ -159,8 +163,9 @@ export default [
 
     { 
         nome: "Pizzaria Imperial", 
+        imagem: require ('../img/pizzaria_imperial.webp'),
         avaliacao: '3.0', 
-        dadoQualquer: "dado qualquer 2",
+        dadoQualquer: "Pizzria - 12 km, 45 min - 1h",
         categorias: [
             {
                 nome: "Pizza Salgada",

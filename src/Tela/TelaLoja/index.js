@@ -1,15 +1,11 @@
 import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity, KeyboardAvoidingView, Platform } from 'react-native';
-import React, { useState } from 'react';
+import { useState, useContext } from 'react';
 import { AntDesign } from '@expo/vector-icons';
+import { CarrinhoContext } from '../../providers/context';
 
 const Acessarloja = ({ route, navigation }) => {
-    const [carrinho, setCarrinho] = useState([]);
-
+    const { carrinho, addProduto } = useContext(CarrinhoContext);
     const loja = route.params || {};
-
-    function adicionarAoCarrinho(produto) {
-        setCarrinho((prev) => [...prev, produto]);
-    }
 
     function Produto({ produto }) {
         return (
@@ -26,7 +22,9 @@ const Acessarloja = ({ route, navigation }) => {
 
                     <Text style={styles.preco}>R$ {produto.preco.toFixed(2)}</Text>
 
-                    <TouchableOpacity onPress={() => adicionarAoCarrinho(produto)} style={styles.botaoCarrinho}>
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate('Adicionar', { produto, onAdicionar: (produto) => addProduto(produto) });
+                    }} style={styles.botaoCarrinho}>
                         <AntDesign name="shoppingcart" size={24} color="black" />
                     </TouchableOpacity>
                 </View>
@@ -46,7 +44,7 @@ const Acessarloja = ({ route, navigation }) => {
         );
     }
 
-    const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+    const total = carrinho.reduce((acc, item) => acc + (parseFloat(item.preco) * parseInt(item.quantidade)), 0);
     const quantidade = carrinho.length;
 
     return (
@@ -81,7 +79,7 @@ const Acessarloja = ({ route, navigation }) => {
 
                         <TouchableOpacity
                             style={styles.botaoVerCarrinho}
-                            onPress={() => navigation.navigate('Carrinho', { carrinho })}
+                            onPress={() => navigation.navigate('Carrinho', { carrinho, loja })}
                         >
                             <Text style={styles.textoBotao}>Ver Carrinho</Text>
                         </TouchableOpacity>
@@ -101,7 +99,7 @@ const styles = StyleSheet.create({
     lojaContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 130,
+        marginTop: 30,
         paddingHorizontal: 10,
     },
 
@@ -109,7 +107,7 @@ const styles = StyleSheet.create({
         fontSize: 20, 
         fontWeight: 'bold', 
         textAlign: 'left', 
-        marginLeft: 10,
+        marginLeft: 50,
         marginTop: 10,
     },
 
@@ -126,7 +124,7 @@ const styles = StyleSheet.create({
     produtoContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: 10,
+        padding: 10,
         gap: 10,
         justifyContent: 'space-between',
     },
@@ -135,12 +133,14 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         borderRadius: 8,
+      
     },
 
     produtoImg: {
         width: 60,
         height: 60,
         borderRadius: 8,
+        left: 28,
     },
     
     produtoInfo: {
